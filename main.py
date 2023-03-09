@@ -5,7 +5,7 @@ app = FastAPI()
 
 @app.get("/")
 def read_root():
-    return {"Hello" : "Platea.co"}
+    return "Hello Platea.co"
 
 @app.post("/recommendV1/{tripLevel}")
 def recommend(art_level:int, history_level:int, nature_level:int, shopping_level:int, k:int=10):
