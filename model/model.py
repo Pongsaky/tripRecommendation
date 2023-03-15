@@ -151,7 +151,9 @@ class TFID_MODEL:
                 "ID" : self.detail.iloc[i[0]]['placeID'],
                 "name" : self.detail.iloc[i[0]]['name'],
                 "address" : self.detail.iloc[i[0]]['address'],
-                "geometry" : self.detail.iloc[i[0]]['geometry'],
+                "geometry" : { "lat" : self.detail.iloc[i[0]]['geometry'].split(',')[0][1:],
+                               "lon": self.detail.iloc[i[0]]['geometry'].split(',')[-1][:-1]
+                            },
                 "phone_number" : self.detail.iloc[i[0]]['phone_number'],
                 }
             # print(self.detail.iloc[i[0]]['name'])
