@@ -212,6 +212,7 @@ class Recommendation_MODEL:
                                     "lon": self.detail.iloc[idx]['geometry'].split(',')[-1][:-1]
                                     },
                         "phone_number" : self.detail.iloc[idx]['phone_number'],
+                        "photo" : eval(self.detail.iloc[idx]['photo'])
                         })
                     self.visited[idx]=1
                     break
@@ -242,6 +243,7 @@ class Recommendation_MODEL:
                     'geometry': k_recommend[idx]['geometry'],
                     'address' : k_recommend[idx]['address'],
                     'phone_number': k_recommend[idx]['phone_number'],
+                    'photo' : k_recommend[idx]['photo'],
                     'time': {
                             "time_start": milli_time_start,
                             "time_end" :  milli_time_end
